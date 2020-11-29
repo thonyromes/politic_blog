@@ -1,0 +1,477 @@
+/* CUSTOM FONT */
+
+@font-face {
+  font-family: "play-regular";
+  src: url("../font/play/Play-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "play-bold";
+  src: url("../font/play/Play-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "merienda-regular";
+  src: url("../font/merienda/Merienda-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "merienda-bold";
+  src: url("../font/merienda/Merienda-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@primary-color: rgb(32,
+32,
+32);
+@secondary-color: rgb(4,
+155,
+243);
+@white: rgb(255,
+255,
+255);
+a,
+input {
+  transition: 0.3s ease;
+}
+
+a {
+  text-decoration: none;
+  color: @primary-color;
+}
+
+.p-color {
+  background-color: @primary-color;
+}
+
+p,
+h2,
+h3,
+h4,
+h5,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.w-0 {
+  width: 0;
+  overflow-x: hidden;
+}
+
+.smooth-transit {
+  transition: width 1s;
+}
+
+body {
+  background-color: @white;
+  background-image: url("../img/page-background.png");
+  font-family: "play-regular";
+}
+
+.wrapper {
+  background-image: svg-gradient( to right, fade(@primary-color, 20), fade(@white, 20) 30%, fade(@primary-color, 20));
+}
+
+/* HEADER */
+
+.header {
+  background-color: @primary-color;
+}
+
+.logo {
+  font-family: "merienda-regular", sans-serif;
+}
+
+.sform {
+  & input {
+    border-right: 2px solid fade(@white, 10);
+    box-shadow: inset 0 0 1px 1px fade(@white, 5);
+    @media screen and (max-width: 480px) {
+      max-width: 12rem;
+    }
+    &:focus {
+      background-color: fade(@white, 20);
+    }
+  }
+}
+
+.nav {
+  background-color: @secondary-color;
+  & li {
+    padding: 0.15rem 0.5rem;
+    @media screen and (min-width: 480px) {
+      padding: 0;
+      padding-left: 0.25rem;
+      &:not(:last-of-type) a {
+        border-right: 1px solid fade(@primary-color, 10);
+      }
+    }
+  }
+  & a {
+    border-radius: 0.15rem;
+    color: @primary-color;
+    display: inline-block;
+    padding: 0.35rem 1.5rem;
+    width: 100%;
+    @media screen and (max-width: 768px) {
+      padding: 0.25rem 0.75rem;
+      text-align: center;
+    }
+    @media screen and (max-width: 480px) {
+      padding: 0.5rem;
+      text-align: left;
+    }
+    &:hover,
+    &.active {
+      background-color: @primary-color;
+      color: @secondary-color;
+    }
+  }
+}
+
+.drop-down {
+  & ul {
+    display: none;
+  }
+  &:hover {
+    &>a {
+      background-color: @primary-color;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      color: darken(@secondary-color, 10);
+    }
+    &>ul {
+      display: block;
+    }
+  }
+}
+
+.hot-news {
+  left: 0;
+  padding-left: .25rem;
+  padding-top: .25rem;
+  width: 35rem;
+  &>li {
+    background-color: fade(@primary-color, 90);
+  }
+  @media screen and (max-width: 980px) {
+    width: 25rem;
+  }
+  @media screen and (max-width: 768px) {
+    width: 20rem;
+  }
+  @media screen and (max-width: 480px) {
+    width: 15rem;
+  }
+}
+
+.hot-news-con {
+  max-width: 20rem;
+  a {
+    color: white;
+    padding: 0;
+    &:hover {
+      background-color: inherit;
+    }
+  }
+}
+
+.hot-news-img {
+  max-width: 10rem;
+}
+
+/* END HEADER */
+
+/* MAIN CONTAINER */
+
+/* MAIN CONTENT */
+
+.banner {
+  box-shadow: inset 0 0 4px 1px fade(@primary-color, 30);
+}
+
+/* SLIDER */
+
+.slide {
+  & p {
+    background-color: fade(@primary-color, 90);
+    color: @secondary-color;
+  }
+}
+
+/* END SLIDER */
+
+.popular-post,
+.latest-posts {
+  & h3 {
+    background-color: @primary-color;
+    color: white;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.latest-posts {
+  box-shadow: inset -1px -1px 4px 0 fade(@primary-color, 15);
+  margin-bottom: 1rem;
+}
+
+.post {
+  padding-bottom: 1.5rem;
+}
+
+.post-img {
+  flex: 0 0 6rem;
+  width: 6rem;
+}
+
+.read-more {
+  & a {
+    background-color: @secondary-color;
+    border-radius: 0.1rem;
+    color: @primary-color;
+    font-family: 1rem;
+    padding: 0.5rem 0.5rem;
+    &:hover {
+      background-color: @primary-color;
+      color: @secondary-color;
+    }
+  }
+}
+
+.tooltip-v {
+  background-color: @primary-color;
+  left: 1rem;
+  height: 2rem;
+  top: 1rem;
+  transform: rotate(45deg);
+  width: 2rem;
+  z-index: 1;
+}
+
+/* POST PAGE */
+
+.related-post {
+  flex: 0 0 10rem;
+  width: 10rem;
+  &:hover p {
+    text-decoration: underline;
+  }
+}
+
+/* POST PAGE */
+
+/* END MAIN CONTENT */
+
+/* SIDEBAR */
+
+.asidebar {
+  flex: 0 0 16rem;
+  width: 17rem;
+}
+
+.newsletter,
+.contact-form {
+  box-shadow: 0 0 6px 1px fade(@primary-color, 15);
+  & input,
+  & textarea {
+    background-color: fade(@primary-color, 5);
+    border: none;
+    box-shadow: inset 0 0 6px 1px fade(@primary-color, 10);
+    margin-bottom: 0.65rem;
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    &:focus {
+      background-color: @white;
+    }
+  }
+  & textarea {
+    resize: none;
+    height: 7rem;
+  }
+  & button {
+    background-color: @secondary-color;
+    transition: 0.3s;
+    &:hover {
+      background-color: @primary-color;
+      color: @secondary-color;
+    }
+  }
+}
+
+.popular-post,
+.categories-post {
+  & a {
+    background-color: @white;
+    box-shadow: 0 0 6px 1px fade(@primary-color, 15);
+    color: @primary-color;
+    display: block;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    &:hover {
+      background-color: @secondary-color;
+    }
+  }
+}
+
+.categories-post {
+  & a {
+    background-color: @primary-color;
+    color: fade(@white, 80);
+    font-size: 1rem;
+    text-transform: capitalize;
+    &:hover {
+      color: @primary-color;
+    }
+  }
+}
+
+/* END SIDEBAR */
+
+/* FOOTER */
+
+.footer {
+  background-color: @primary-color;
+  padding: 1.5rem 0.5rem;
+}
+
+/* END FOOTER */
+
+/* GALLERY PAGE */
+
+.galleries-con {
+  & .galleries {
+    flex: 0 0 50%;
+    padding: 0.25rem 0.4rem;
+    & label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 0.5rem;
+      background-color: fade(@primary-color, 90);
+      color: @secondary-color;
+    }
+    @media screen and (max-width: 480px) {
+      flex: 0 0 100%;
+    }
+  }
+}
+
+/* END GALLERY PAGE */
+
+/* CONTACT PAGE */
+
+.contact-logo-con {
+  flex: 0 0 40%;
+  @media screen and (max-width: 480px) {
+    flex: 0 0 100%;
+  }
+}
+
+.contact-logo-pic {
+  flex: 0 0 60%;
+  @media screen and (max-width: 480px) {
+    flex: 0 0 100%;
+  }
+}
+
+.contact-form {
+  & input {
+    max-width: 25rem;
+  }
+}
+
+.contact-info {
+  & label {
+    padding: 0.5rem;
+    background-color: @secondary-color;
+    color: @primary-color;
+    display: block;
+  }
+  & p {
+    margin: 0.5rem 0;
+  }
+}
+
+/* END CONTACT PAGE */
+
+/* ANIMATION */
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes slideInRight {
+  0% {
+    -webkit-transform: translateX(3em);
+    transform: translateX(3em);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    -webkit-transform: translateX(3em);
+    -ms-transform: translateX(3em);
+    transform: translateX(3em);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  z-index: -1;
+}
+
+/* END ANIMATION */
